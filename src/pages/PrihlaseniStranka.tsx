@@ -14,7 +14,7 @@ export function PrihlaseniStranka({ onLogin }: Props) {
     setError('')
 
     try {
-      const response = await fetch('/auth/login', {
+      const response = await fetch('https://konradukolnicek.onrender.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })

@@ -23,7 +23,7 @@ function App() {
       return
     }
 
-    fetch('/auth/me', {
+    fetch('https://konradukolnicek.onrender.com/auth/me', {
       headers: { Authorization: 'Bearer ' + token }
     })
       .then(response => response.json())
@@ -48,7 +48,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/konrato22/'>
       <Navbar user={user} onLogout={handleLogout} />
       <div>
         <Routes>

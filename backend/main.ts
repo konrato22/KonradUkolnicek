@@ -6,7 +6,7 @@ const app = express()
 const PORT = 3000
 const JWT_SECRET = 'tajny-klic-123'
 
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({ origin: '*' }))
 app.use(express.json())
 
 type User = {

@@ -16,7 +16,7 @@ export function UkolyStranka() {
 
   useEffect(() => {
     async function nactiUkoly() {
-      const response = await fetch('/tasks', {
+      const response = await fetch('https://konradukolnicek.onrender.com/tasks', {
         headers: { Authorization: 'Bearer ' + token }
       })
       const data = await response.json()
@@ -30,7 +30,7 @@ export function UkolyStranka() {
     event.preventDefault()
     if (!newTitle.trim()) return
 
-    const response = await fetch('/tasks', {
+    const response = await fetch('https://konradukolnicek.onrender.com/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export function UkolyStranka() {
   }
 
   async function toggleDone(id: number, currentDone: boolean) {
-    await fetch('/tasks/' + id, {
+    await fetch('https://konradukolnicek.onrender.com/tasks/' + id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export function UkolyStranka() {
   async function deleteTask(id: number) {
     if (!confirm('Smazat tento úkol?')) return
 
-    await fetch('/tasks/' + id, {
+    await fetch('https://konradukolnicek.onrender.com/tasks/' + id, {
       method: 'DELETE',
       headers: { Authorization: 'Bearer ' + token }
     })

@@ -15,7 +15,7 @@ export function StatistikyStranka() {
 
   useEffect(() => {
     async function nactiUkoly() {
-      const response = await fetch('/tasks', {
+      const response = await fetch('https://konradukolnicek.onrender.com/tasks', {
         headers: { Authorization: 'Bearer ' + token }
       })
       const data = await response.json()
